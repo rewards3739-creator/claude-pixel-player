@@ -20,7 +20,7 @@ jobs:
         run: echo y | $ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager "platforms;android-34" "build-tools;34.0.0" || true
       - name: Build
         run: |
-          unzip -o app.zip -d proj
+          unzip -o "app (1).zip" -d proj
           cd "$(dirname "$(find proj -name settings.gradle.kts | head -1)")"
           gradle assembleDebug --no-daemon
           mkdir -p "$GITHUB_WORKSPACE/out"
